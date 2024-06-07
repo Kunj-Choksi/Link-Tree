@@ -1,0 +1,18 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <%= image_tag(@user.avatar, class: "avatar-image img-fluid") if @user.avatar.attached? %>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <h2><%= @user.email %></h2>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <p>Some Bio Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ex iure ratione?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
