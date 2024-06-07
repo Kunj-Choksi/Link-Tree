@@ -7,10 +7,10 @@
           <%= image_tag(@user.avatar, class: "avatar-image img-fluid") if @user.avatar.attached? %>
         </div>
         <div class="col-12 d-flex justify-content-center">
-          <h2><%= @user.email %></h2>
+          <h2><%= @user.full_name %></h2>
         </div>
         <div class="col-12 d-flex justify-content-center">
-          <p>Some Bio Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ex iure ratione?</p>
+          <p><%= @user.body %></p>
         </div>
       </div>
     </div>
