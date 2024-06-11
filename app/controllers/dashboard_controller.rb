@@ -11,11 +11,16 @@ class DashboardController < ApplicationController
 
   def show
     @should_show_navbar = false
+    redirect_to root_path if @user.nil?
   end
 
   private
 
   def set_user
-    @user = User.find_by_id(params[:id])
+    begin 
+      @user = User.friendly.find(params[:id])
+    rescue StandardError
+      @user = nil
+    end
   end
 end
