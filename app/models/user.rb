@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_one_attached :avatar
   friendly_id :username, use: %i[slugged]
 
+  after_create :create_default_links
+  after_update :create_default_links
+  has_many :links, dependent: :destroy
+
   validates :full_name, length: { maximum: 50 }
   validates :body, length: { maximum: 80 }
   validate :valid_username
@@ -24,5 +28,11 @@ class User < ApplicationRecord
 
   def should_generate_new_friendly_id?
     username_changed? || slug.blank?
+  end
+
+  private
+
+  def create_default_links
+    Link.create(user: self, title: "", url: "") while links.count < 5
   end
 end
