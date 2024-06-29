@@ -12,6 +12,7 @@ class DashboardController < ApplicationController
   def show
     @should_show_navbar = false
     redirect_to root_path if @user.nil?
+    @links = @user.links.where.not(url: "", title: "")
   end
 
   private

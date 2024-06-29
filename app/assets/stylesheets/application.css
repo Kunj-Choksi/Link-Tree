@@ -24,3 +24,42 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+.linkable {
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 4rem;
+  margin: 0.5rem;
+  border: 1px solid #000 !important;
+  border-radius: 0px !important;
+  background: #fff !important;
+}
+
+.linkable:hover {
+  background-color: #ccc !important;
+  color: #000 !important;
+}
+
+.linkable-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.profile-page {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(45, 177, 187, 1) 37%,
+    rgba(19, 198, 227, 1) 74%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
