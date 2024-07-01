@@ -54,6 +54,7 @@
 .profile-page {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -62,4 +63,11 @@
     rgba(19, 198, 227, 1) 74%,
     rgba(0, 212, 255, 1) 100%
   );
+}
+
+.preview-frame {
+  width: 414px;
+  height: 736px;
+  border: 1rem solid #000;
+  border-radius: 5%;
 }
