@@ -71,3 +71,7 @@ gem "devise", "~> 4.9"
 gem "simple_form", "~> 5.3"
 
 gem "friendly_id", "~> 5.5"
+
+gem "apexcharts", "~> 0.2.0"
+
+gem "groupdate", "~> 6.4"
