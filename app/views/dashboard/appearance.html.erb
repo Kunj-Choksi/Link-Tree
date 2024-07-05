@@ -1,42 +1,11 @@
 <div class="container p-5">
   <h1>Appearance</h1>
-  <%= simple_form_for(current_user, 
-    url: registration_path(current_user), 
-    html: {method: :put}) do |f| %>
-    <div class="row">
-      <div class="col-6">
-        <div class="row mt-5">
-          <div class="col-6">
-            <%= image_tag(current_user.avatar, class: "avatar-image img-fluid") if current_user.avatar.attached? %>
-          </div>
-          <div class="col-4 mt-5">
-            <%= f.input :avatar, required: false, label: false %>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-6 no-padding-col">
-            <%= f.input :full_name, label: false, class: "form-control", placeholder: "Your full name" %>
-          </div>
-          <div class="col-6 no-padding-col">
-            <div class="input-group mb-3">
-              <span class="input-group-text">@</span>
-              <%= f.input :username, label: false, class: "form-control", placeholder: "Your username", required: true, disabled: current_user.username.present? %>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col no-padding-col">
-            <%= f.input :body, placeholder: "About you...", label: false, class: "form-control", required: false %>
-          </div>
-        </div>
-        <div class="col-4 no-padding-col">
-          <%= f.submit "Update Account", class: "btn btn-primary" %>
-        </div>
-      </div>
-      <div class="col-6">
-        <h6>My Linktree: <%= link_to url_for([current_user, { only_path: false }]), user_path(current_user), target: '_blank' %></h6>
-        <%= content_tag(:iframe, "", src: user_path(current_user), title: "Preview", class: "preview-frame") %>
-      </div>
+  <div class="row">
+    <div class="col-6">
+      <%= render 'dashboard/appearance_form' %>
     </div>
-  <% end %>
+    <div class="col-6">
+      <%= render 'dashboard/preview' %>
+    </div>
+  </div>
 </div>
