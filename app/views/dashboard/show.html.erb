@@ -22,7 +22,10 @@
           <% @links.each do |link| %>
             <div class="row">
               <div class="col-12 d-flex justify-content-center">
-                <%= link_to link.url, target: "_blank", class: "linkable btn btn-secondary" do %>
+                <%= link_to link.url, 
+                    target: "_blank", 
+                    class: "linkable btn btn-secondary", 
+                    data: { controller: "links", action: "click->links#click", link: link } do %>
                   <span class="linkable-span"><%= link.title %></span>
                 <% end %>
               </div>

@@ -36,6 +36,12 @@ class User < ApplicationRecord
     daily_views.group_by_day(:time).count
   end
 
+  def get_daily_link_clicks
+    daily_link_clicks = Ahoy::Event.where("json_extract(properties, '$.link.user_id') LIKE '#{id}'").where(name: "Clicked Link")
+    
+    daily_link_clicks.group_by_day(:time).count
+  end
+
   private
 
   def create_default_links
