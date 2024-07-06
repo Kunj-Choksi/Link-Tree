@@ -1,10 +1,10 @@
 <div class="col-2"></div>
 <div class="col-8">
   <div class="container">
-    <%= line_chart([
-      { name: "Users", type: "column", data: User.group_by_day(:created_at).count },
-      { name: "Links", type: "area", data: Link.group_by_day(:created_at).count }
-    ]) %>
+    <%= mixed_charts({theme: 'palette2', yaxis: {min: 0, forceNiceScale: true}}) do %>
+      <% column_chart(name: "Total Views", data: @daily_profile_views) %>
+      <% column_chart(name: "Links", data: Link.group_by_day(:created_at).count) %>
+    <% end %>
   </div>
 </div>
 <div class="col-2"></div>

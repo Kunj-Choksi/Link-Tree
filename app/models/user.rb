@@ -30,6 +30,12 @@ class User < ApplicationRecord
     username_changed? || slug.blank?
   end
 
+  def get_daily_profile_views
+    daily_views = Ahoy::Event.where("json_extract(properties, '$.user.id') LIKE '#{id}'")
+                              .where(name: "Viewed Dashboard").where('time > ?', 1.day.ago)
+    daily_views.group_by_day(:time).count
+  end
+
   private
 
   def create_default_links
