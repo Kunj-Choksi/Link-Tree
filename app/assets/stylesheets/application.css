@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .avatar-image {
   width: 10rem;
   height: 10rem;
@@ -32,12 +36,12 @@
   height: 4rem;
   margin: 0.5rem;
   border: 1px solid #000 !important;
-  border-radius: 0px !important;
+  border-radius: 10px !important;
   background: #fff !important;
 }
 
 .linkable:hover {
-  background-color: #ccc !important;
+  background-color: #75ecf9 !important;
   color: #000 !important;
 }
 
@@ -55,14 +59,7 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(45, 177, 187, 1) 37%,
-    rgba(19, 198, 227, 1) 74%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background-image: url("background.png");
 }
 
 .preview-frame {

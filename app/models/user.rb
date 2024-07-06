@@ -42,6 +42,13 @@ class User < ApplicationRecord
     daily_link_clicks.group_by_day(:time).count
   end
 
+  def get_daily_views_by_device_type
+    Ahoy::Event.joins(:visit)
+      .where("time > ? AND time <= ?", 
+        Date.today.last_month, Date.today + 1.day)
+      .group(:device_type)
+  end
+
   private
 
   def create_default_links
